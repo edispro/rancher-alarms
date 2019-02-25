@@ -187,6 +187,7 @@ See [examples](https://github.com/ndelitski/rancher-alarms/tree/master/examples)
  - `state` service state like it named in Rancher API
  - `prevMonitorState` rancher-alarms previous service state name
  - `monitorState` rancher-alarms service state name - e.g. always degraded for unhealthy
+ - `containerName`  Name of a containerName in a Rancher
  - `serviceName` Name of a service in a Rancher
  - `serviceUrl` Url to a running service in a Rancher UI
  - `stackUrl` Url to stack in a Rancher UI
