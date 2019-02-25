@@ -126,7 +126,7 @@ export default class ServiceStateMonitor {
           environmentName: environment.name,
           environmentUrl, // url to environment in a rancher UI
           container,
-          containerName: containers.name
+          containerName: container.name
         })
       } catch(err) {
         logError(`failed to notify target ${target.toString()}`, err);
