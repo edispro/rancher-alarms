@@ -104,6 +104,7 @@ export default class ServiceStateMonitor {
     let serviceUrl = this._rancher.buildUrl(`/env/${envId}/apps/stacks/${stackId}/services/${serviceId}/containers`);
     let stackUrl = this._rancher.buildUrl(`/env/${envId}/apps/stacks/${stackId}`);
     let stack = await this._rancher.getStack(stackId);
+    let container = await this._rancher.getServiceContainers(serviceId);
     let environment = await this._rancher.getCurrentEnvironment();
     let environmentUrl = this._rancher.buildUrl(`/env/${envId}`);
 
@@ -124,6 +125,8 @@ export default class ServiceStateMonitor {
           environment, // environment object with a full list of properties (see Rancher API)
           environmentName: environment.name,
           environmentUrl, // url to environment in a rancher UI
+          container,
+          containerName: containers.name
         })
       } catch(err) {
         logError(`failed to notify target ${target.toString()}`, err);
