@@ -37,6 +37,9 @@ export default class EmailTarget extends NotificationTarget {
         user: smtp.auth.user,
         pass: smtp.auth.password
       },
+      tls: {
+        rejectUnauthorized: false
+      },
       secure: smtp.secureConnection
     }));
 
